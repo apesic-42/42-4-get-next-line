@@ -37,7 +37,6 @@ static t_caract	*treat_buf(char *buf, t_caract *first)
 		current->next = new_t_caract(nouveau);
 		current = nouveau;
 	}
-
 	return (first);
 }
 
@@ -99,15 +98,15 @@ char	*get_next_line(int fd)
 		return (NULL);
 	while (len_before_nl(first) == -1 && state > 0)
 	{
-		buf = (char *)ft_calloc(sizeof(char), BUFFER_SIZE);
+		buf = (char *)ft_calloc(sizeof(char), BUFFER_SIZE + 1);
 		if (!buf)
 			return (NULL);
 		if (state > 0)
 		    state = read(fd, buf, BUFFER_SIZE);
-		if (state >= 0 && state != BUFFER_SIZE)
+		if (state >= 0)
 		{
-		  buf[state] = '\0';
-        }
+		    buf[state] = '\0';
+		}
 		first = treat_buf(buf, first);
 		free(buf);
 	}

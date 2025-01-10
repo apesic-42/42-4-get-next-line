@@ -8,32 +8,35 @@ int	main(void)
 	int		fd;
 	char	*a;
  	char	*b;
-	// char	*c;
-	// char	*d;
-	// char	*e;
+	char	*c;
+	char	*d;
+	char	*e;
+	char	*f;
+	// char	*g;
+	// char	*h;
 
 
 	// empty.txt
 	// ok.txt
-	fd = open("empty.txt", O_RDONLY);
+	fd = open("multiple_nl.txt", O_RDONLY);
 	a = get_next_line(fd);
 	printf("%s\n", a);
 	free(a);
  	b = get_next_line(fd);
 	printf("%s", b);
 	free(b);
-	// c = get_next_line(fd);
-	// printf("%s", c);
-	// free(c);
-	// d = get_next_line(fd);
-	// printf("%s", d);
-	// free(d);
-	// e = get_next_line(fd);
-	// printf("%s", e);
-	// free(e);
-	// f = get_next_line(fd);
-	// printf("%s", f);
-	// free(f);
+	c = get_next_line(fd);
+	printf("%s", c);
+	free(c);
+	d = get_next_line(fd);
+	printf("%s", d);
+	free(d);
+	e = get_next_line(fd);
+	printf("%s", e);
+	free(e);
+	f = get_next_line(fd);
+	printf("%s", f);
+	free(f);
 	// g = get_next_line(fd);
 	// printf("%s", g);
 	// free(g);

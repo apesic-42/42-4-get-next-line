@@ -39,6 +39,8 @@ int	spe_len(t_caract *first)
 
 	i = 0;
 	courant = first;
+	if (first->data == '\n')
+	    return (1);
 	while (courant != NULL && courant->is_nl != true && courant->data != '\n')
 	{
 		courant = courant->next;
