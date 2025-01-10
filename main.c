@@ -12,6 +12,9 @@ int	main(void)
 	// char	*d;
 	// char	*e;
 
+
+	// empty.txt
+	// ok.txt
 	fd = open("empty.txt", O_RDONLY);
 	a = get_next_line(fd);
 	printf("%s\n", a);
@@ -40,4 +43,3 @@ int	main(void)
 }
 
 // cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c -g
-

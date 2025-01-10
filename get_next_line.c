@@ -103,10 +103,12 @@ char	*get_next_line(int fd)
 		if (!buf)
 			return (NULL);
 		if (state > 0)
-			state = read(fd, buf, BUFFER_SIZE);
-		if (state >= 0)
-        	buf[state] = '\0';
-        first = treat_buf(buf, first);
+		    state = read(fd, buf, BUFFER_SIZE);
+		if (state >= 0 && state != BUFFER_SIZE)
+		{
+		  buf[state] = '\0';
+        }
+		first = treat_buf(buf, first);
 		free(buf);
 	}
 	out_line = out(first);
