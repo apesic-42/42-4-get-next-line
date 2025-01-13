@@ -12,13 +12,19 @@ int	main(void)
 	char	*d;
 	char	*e;
 	char	*f;
-	// char	*g;
-	// char	*h;
+	char	*g;
+	char	*h;
+	char	*i;
+	char	*j;
+	char	*k;
+	char	*l;
+	char	*m;
+
 
 
 	// empty.txt
 	// ok.txt
-	fd = open("multiple_nl.txt", O_RDONLY);
+	fd = open("variable_nls.txt", O_RDONLY);
 	a = get_next_line(fd);
 	printf("%s\n", a);
 	free(a);
@@ -37,12 +43,27 @@ int	main(void)
 	f = get_next_line(fd);
 	printf("%s", f);
 	free(f);
-	// g = get_next_line(fd);
-	// printf("%s", g);
-	// free(g);
-	// h = get_next_line(fd);
-	// printf("%s", h);
-	// free(h);
+	g = get_next_line(fd);
+	printf("%s", g);
+	free(g);
+	h = get_next_line(fd);
+	printf("%s", h);
+	free(h);
+	i = get_next_line(fd);
+	printf("%s", i);
+	free(i);
+	j = get_next_line(fd);
+	printf("%s", j);
+	free(j);
+	k = get_next_line(fd);
+	printf("%s", k);
+	free(k);
+	l = get_next_line(fd);
+	printf("%s", l);
+	free(l);
+	m = get_next_line(fd);
+	printf("%s", m);
+	free(m);
 }
 
-// cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c -g
+//cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c -g 

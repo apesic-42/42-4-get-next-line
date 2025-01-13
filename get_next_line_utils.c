@@ -32,6 +32,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (res);
 }
+
+
 int	spe_len(t_caract *first)
 {
 	int			i;
@@ -46,6 +48,8 @@ int	spe_len(t_caract *first)
 		courant = courant->next;
 		i++;
 	}
+	if (courant != NULL && courant->data == '\n')
+		i++;
 	return (i);
 }
 
