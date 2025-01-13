@@ -1,14 +1,16 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 13:39:24 by apesic            #+#    #+#             */
-/*   Updated: 2024/12/17 19:14:51 by apesic           ###   ########.fr       */
+/*   Created: 2025/01/13 12:49:14 by apesic            #+#    #+#             */
+/*   Updated: 2025/01/13 12:49:15 by apesic           ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
+
+
 
 #include "get_next_line.h"
 
@@ -78,4 +80,20 @@ t_caract	*new_t_caract(t_caract *t_caract)
 		t_caract->is_nl = false;
 	t_caract->next = NULL;
 	return (t_caract);
+}
+
+void	*clean_exit(t_caract *first)
+{
+	t_caract	*courant;
+	t_caract	*tmp;
+
+	courant = first;
+
+	while (courant != NULL)
+	{
+		tmp = courant;
+		courant = courant->next;
+		free(tmp);
+	}
+	return (NULL);
 }
