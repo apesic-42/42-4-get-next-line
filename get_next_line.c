@@ -1,15 +1,3 @@
-/******************************************************************************/
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 12:49:08 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/13 13:29:40 by apesic           ###   ########.fr       */
-/*                                                                            */
-/******************************************************************************/
-
 #include "get_next_line.h"
 
 static t_caract	*treat_buf(char *buf, t_caract *first)
@@ -40,13 +28,12 @@ static t_caract	*treat_buf(char *buf, t_caract *first)
 	return (first);
 }
 
-static t_caract *fuck_line(char *buf, t_caract *first)
+static t_caract	*fuck_line(char *buf, t_caract *first)
 {
 	first = treat_buf(buf, first);
 	free(buf);
 	return (first);
 }
-
 
 static t_caract	*get_new_first(t_caract *first)
 {
@@ -94,8 +81,6 @@ static char	*out(t_caract *first)
 	return (out_line);
 }
 
-
-
 char	*get_next_line(int fd)
 {
 	static t_caract	*first;
@@ -115,9 +100,9 @@ char	*get_next_line(int fd)
 		if (!buf)
 			return (NULL);
 		if (state > 0)
-		    state = read(fd, buf, BUFFER_SIZE);
+			state = read(fd, buf, BUFFER_SIZE);
 		if (state >= 0)
-		    buf[state] = '\0';
+			buf[state] = '\0';
 		first = fuck_line(buf, first);
 	}
 	out_line = out(first);

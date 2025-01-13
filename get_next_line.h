@@ -6,7 +6,7 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:49:25 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/13 13:36:41 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/13 13:41:28 by apesic           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -31,6 +31,6 @@ void				afficher_liste(t_caract *head);
 int					len_before_nl(t_caract *first);
 t_caract			*new_t_caract(t_caract *t_caract);
 int					spe_len(t_caract *first);
-void 				*clean_exit(t_caract *first);
+void				*clean_exit(t_caract *first);
 
 #endif // FT_H

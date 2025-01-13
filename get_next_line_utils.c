@@ -6,11 +6,9 @@
 /*   By: apesic <apesic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:49:14 by apesic            #+#    #+#             */
-/*   Updated: 2025/01/13 12:49:15 by apesic           ###   ########.fr       */
+/*   Updated: 2025/01/13 13:44:36 by apesic           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
-
-
 
 #include "get_next_line.h"
 
@@ -35,7 +33,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (res);
 }
 
-
 int	spe_len(t_caract *first)
 {
 	int			i;
@@ -44,7 +41,7 @@ int	spe_len(t_caract *first)
 	i = 0;
 	courant = first;
 	if (first->data == '\n')
-	    return (1);
+		return (1);
 	while (courant != NULL && courant->is_nl != true && courant->data != '\n')
 	{
 		courant = courant->next;
@@ -88,7 +85,6 @@ void	*clean_exit(t_caract *first)
 	t_caract	*tmp;
 
 	courant = first;
-
 	while (courant != NULL)
 	{
 		tmp = courant;
